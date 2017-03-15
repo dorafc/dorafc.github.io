@@ -869,7 +869,7 @@ p {
   max-height: 95%;
   overflow: auto;
   padding: 1.5em;
-  position: relative;
+  /*position: relative;*/
   -webkit-transition: opacity 0.25s ease;
   transition: opacity 0.25s ease;
   width: 95%; }
