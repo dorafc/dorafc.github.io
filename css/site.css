@@ -840,7 +840,7 @@ p {
   right: 1.5em;
   height: 1.5em;
   width: 1.5em;
-  background: #ededed;
+  /*background: #ededed;*/
   cursor: pointer; }
   .modal .modal-close::after, .modal .modal-close::before {
     position: absolute;
