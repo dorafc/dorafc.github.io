@@ -3,11 +3,38 @@
   --weight-bold: 700;
 
   --green: #00a675;
+  --darkest: #000;
   --dark: #3f3f3f;
   --medium: #888;
 
   --font-sans-serif: 'Roboto', sans-serif;
   --font-serif: 'Noto Serif', serif;
+
+  --font-size: 14px;
+  --font-size-12: 0.857rem;
+  --font-size-16: 1.143rem;
+  --font-size-18: 1.28rem;
+  --line-height: 1.5em;
+
+  --screen-padding: 50px 0;
+  --header-padding: 15px;
+  --section-margin: 20px 0 8px;
+  --text-margin: 14px 0;
+}
+
+/* print styles */
+@media print {
+  :root { 
+    --screen-padding: 0;
+    --font-size: 11px; 
+    --header-padding: 8px;
+    --section-margin: 10px 0 5px;
+    --text-margin: 10px 0;
+  }
+
+  dl+p, dl+ul{
+    margin: 5px 0 14px 0;
+  }
 }
 
 html{
@@ -15,13 +42,15 @@ html{
   justify-content: center;
   font-family: var(--font-serif);
   color: var(--dark);
-  padding: 50px 0;
+  padding: var(--screen-padding);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
 }
 
 h1,h2, h3, h4, h5, h6{
   font-family: var(--font-serif);
   font-weight: var(--weight-regular);
-  color: #000;
+  color: var(--darkest);
 }
 
 a{
@@ -31,7 +60,6 @@ a{
 
 address{
   font-style: normal;
-  line-height: 1.4em;
   color: var(--medium);
 }
 
@@ -39,29 +67,31 @@ address:nth-of-type(2){
   text-align: right;
 }
 
+/* name */
 h1{
-  font-size: 18px;  
+  font-size: var(--font-size-18); 
   font-weight: var(--weight-bold);
 }
 
+/* section title */
 h2{
   font-family: var(--font-sans-serif);
   font-size: 12px;
   font-weight: var(--weight-bold);
-  margin: 20px 0 8px;
+  margin: var(--section-margin);
   color: var(--green);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-
+/* employer */
 h4{
   font-family: var(--font-sans-serif);
   color: var(--medium);
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 12px;
-  margin: 20px 0 3px 0;
+  font-size: var(--font-size-12);
+  margin: 20px 0 0px 0;
 }
 
 dl{
@@ -75,7 +105,7 @@ dl{
 dt, .project{
   font-weight: var(--weight-bold);
   font-family: var(--font-sans-serif);
-  font-size: 16px;
+  font-size: var(--font-size-16);
   color: #000;
 }
 
@@ -85,21 +115,18 @@ dt .location{
 
 dd{
   color: var(--medium);
-  font-size: 14px;
 }
 
 body{
   max-width: 8.5in;
-  /* padding: .5in; */
 }
 
 ul{
   padding-inline-start: 20px;
 }
 
-li, p, address{
-  font-size: 14px;
-  line-height: 1.5em;
+p, ul{
+  margin: var(--text-margin);
 }
 
 li{
@@ -107,7 +134,7 @@ li{
 }
 header{
   border-bottom: solid 1px var(--green);
-  padding-bottom: 15px;
+  padding-bottom: var(--header-padding);
 }
 
 .contact{
